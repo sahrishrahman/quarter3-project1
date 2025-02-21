@@ -32,7 +32,7 @@ if upload_files:
         if file_ext == ".csv":
             df = pd.read_csv(file)
         elif file_ext == ".xlsx":
-            df = pd.read_excel(file)
+            df = pd.read_excel(file, engine ="openpyxl")
         else:
             st.error(f"Unsupported file format. Please upload CSV or Excel files only: {file_ext}")
             continue
